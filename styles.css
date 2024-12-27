@@ -235,3 +235,83 @@ canvas#matrix {
     transform: translateY(0);
     /* Поднимается на своё место */
 }
+
+
+/* Контейнер для навыков */
+.skills-container {
+    display: flex;
+    /* Горизонтальная ориентация */
+    flex-wrap: wrap;
+    /* Элементы могут переноситься на новую строку */
+    gap: 15px;
+    /* Уменьшено расстояние между элементами */
+    justify-content: flex-start;
+    /* Выравнивание по левому краю */
+    align-items: flex-start;
+    position: relative;
+}
+
+/* Каждый навык */
+.skill {
+    flex: 0 0 100px;
+    /* Уменьшена фиксированная ширина */
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    /* Для размещения описания */
+}
+
+.skill img {
+    width: 70px;
+    /* Уменьшен размер иконки */
+    height: 70px;
+    /* Уменьшен размер иконки */
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skill img:hover {
+    transform: scale(1.1);
+    /* Эффект увеличения при наведении */
+}
+
+/* Поднятие выбранной иконки */
+.skill.active img {
+    transform: translateY(-15px);
+    /* Поднимаем картинку вверх */
+}
+
+/* Блок с описанием */
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 100%;
+    /* Блок занимает всю строку */
+    margin-top: 15px;
+    /* Уменьшен отступ сверху */
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    color: #d4d4d4;
+    animation: fadeIn 0.3s ease;
+    gap: 15px;
+    /* Уменьшено расстояние между картинкой и текстом */
+}
+
+/* Картинка в описании */
+.description img {
+    width: 80px;
+    /* Уменьшен размер картинки в описании */
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Текст описания */
+.description-text {
+    font-size: 1rem;
+    line-height: 1.5;
+}

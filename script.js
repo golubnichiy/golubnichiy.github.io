@@ -42,3 +42,61 @@ document.addEventListener("DOMContentLoaded", () => {
         rabbit.classList.add("visible");
     }, 2000); // Появляется через 2 секунды
 });
+
+// Словарь описаний
+const skillDescriptions = {
+    python: "Разработка прикладного программного обеспечения с помощью PyQt6 и Tkinter. Проведение занятий по программам: Основы языка программирования Python; Нейронные сети на Python, Python для анализа данных; Python для сдачи ЕГЭ по информатике и ИКТ.",
+    r: "Разработка прикладного программного обеспечения с использованием Shiny на языке R. Проведение индивидуальных и групповых занятий по основам программирования на языке R. Обучение работе с ключевыми пакетами из экосистемы tidyverse. Выполнение анализа и визуализации данных, а также формулирование и проверка гипотез с использованием современных инструментов анализа на R.",
+    ege: "Подготовка к ЕГЭ по информатике, включающая разбор всех ключевых тем и типов заданий. Обучение основам алгоритмизации, программирования и работы с таблицами данных. Разработка индивидуальных стратегий для решения задач высокого уровня сложности, включая задачи на оптимизацию и поиск закономерностей. Проведение практических занятий с использованием современных образовательных технологий и материалов, а также анализ ошибок для повышения результатов экзамена. Подготовка ведется с использованием языка программирования Python.",
+    "data-analysis": "Работа с реальными и учебными кейсами в области анализа данных. Определение фейковых данных. Анализ больших массивов данных с использованием языков R и Python.",
+    ml: "Машинное обучение — это создание моделей для прогнозирования на основе данных.",
+    superset: "Apache Superset — это мощная BI-система для визуализации данных и построения дашбордов."
+};
+
+// Функция отображения или скрытия описания
+function showSkillDescription(skill, element) {
+    const container = document.querySelector(".skills-container");
+
+    // Если элемент уже активен, удаляем описание и сбрасываем состояние
+    if (element.classList.contains("active")) {
+        const previousDescription = document.querySelector(".description");
+        if (previousDescription) {
+            previousDescription.remove(); // Удаляем описание
+        }
+        element.classList.remove("active"); // Сбрасываем состояние
+        return; // Завершаем выполнение функции
+    }
+
+    // Удаляем существующий блок описания
+    const previousDescription = document.querySelector(".description");
+    if (previousDescription) {
+        previousDescription.remove();
+    }
+
+    // Сбрасываем состояние всех элементов
+    document.querySelectorAll(".skill").forEach((skill) => {
+        skill.classList.remove("active");
+    });
+
+    // Добавляем "active" к текущему элементу
+    element.classList.add("active");
+
+    // Создаем блок описания
+    const description = document.createElement("div");
+    description.classList.add("description");
+
+    const img = document.createElement("img");
+    img.src = element.querySelector("img").src; // Берем картинку из текущего элемента
+    img.alt = element.querySelector("img").alt;
+
+    const text = document.createElement("div");
+    text.classList.add("description-text");
+    text.textContent = skillDescriptions[skill];
+
+    description.appendChild(img);
+    description.appendChild(text);
+
+    // Вставляем описание после текущего элемента
+    const index = Array.from(container.children).indexOf(element);
+    container.insertBefore(description, container.children[index + 1]);
+}

@@ -47,9 +47,17 @@
 
     <section id="about">
         <h2>Обо мне</h2>
-        <p>Я профессиональный и увлеченный преподаватель программирования с опытом работы в языках Python и R. Обладаю
-            способностью быстро обучаться и стремлюсь к постоянному совершенствованию своих навыков. Люблю делиться
-            знаниями и помогать студентам достигать высоких результатов, в том числе в подготовке к ЕГЭ по информатике.
+        <p>Разработчик прикладного программного обеспечения на языках программирования R и Python, с глубоким опытом в
+            анализе
+            данных и создании BI-решений. Инструктор по работе с Apache Superset. Эксперт ЕГЭ по информатике и ИКТ.
+            Автор
+            популярного YouTube-канала, посвященного программированию и использованию BI-систем.</p>
+
+        <p>Преподаватель вуза и автор программ повышения квалификации и профессиональной переподготовки в таких
+            областях, как
+            анализ данных, разработка систем искусственного интеллекта и другие актуальные направления. Реализовал
+            образовательные
+            проекты для крупных компаний, включая Центробанк России, МТС, РЖД и ВТБ.
         </p>
     </section>
 
@@ -69,14 +77,32 @@
 
     <section id="skills">
         <h2>Навыки</h2>
-        <ul>
-            <li>Python</li>
-            <li>R</li>
-            <li>Подготовка к ЕГЭ по информатике</li>
-            <li>Анализ данных</li>
-            <li>Машинное обучение</li>
-            <!-- Добавьте другие навыки по необходимости -->
-        </ul>
+        <div class="skills-container">
+            <!-- Python -->
+            <div class="skill" onclick="showSkillDescription('python', this)">
+                <img src="python-logo.png" alt="Python" title="Python">
+            </div>
+            <!-- R -->
+            <div class="skill" onclick="showSkillDescription('r', this)">
+                <img src="r-logo.png" alt="R" title="R">
+            </div>
+            <!-- ЕГЭ -->
+            <div class="skill" onclick="showSkillDescription('ege', this)">
+                <img src="ege-logo.png" alt="Подготовка к ЕГЭ" title="Подготовка к ЕГЭ">
+            </div>
+            <!-- Анализ данных -->
+            <div class="skill" onclick="showSkillDescription('data-analysis', this)">
+                <img src="data-analysis-logo.png" alt="Анализ данных" title="Анализ данных">
+            </div>
+            <!-- Машинное обучение -->
+            <div class="skill" onclick="showSkillDescription('ml', this)">
+                <img src="ml-logo.png" alt="Машинное обучение" title="Машинное обучение">
+            </div>
+            <!-- Apache Superset -->
+            <div class="skill" onclick="showSkillDescription('superset', this)">
+                <img src="superset-logo.png" alt="Apache Superset" title="Apache Superset">
+            </div>
+        </div>
     </section>
 
     <section id="education">

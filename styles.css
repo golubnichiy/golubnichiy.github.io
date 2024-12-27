@@ -4,7 +4,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #0d0d0d;
+    /*background-color: #0d0d0d;*/
+    background-color: rgba(0, 0, 0, 0.3);
     /* Черный фон */
     color: #d4d4d4;
     /* Светло-серый текст */
@@ -131,4 +132,106 @@ footer {
 
 html {
     scroll-behavior: smooth;
+}
+
+.subheader {
+    max-width: 800px;
+    /* Ширина блока */
+    margin: 0 auto;
+    /* Центрирование блока */
+    padding: 10px 20px;
+    /* Внутренние отступы */
+    text-align: center;
+    /* Центрирование текста */
+    color: #00ff00;
+    /* Зеленый текст */
+    font-size: 1rem;
+    /* Размер шрифта */
+    position: relative;
+    /* Для работы с псевдоэлементами */
+}
+
+.subheader::before,
+.subheader::after {
+    content: "";
+    /* Добавляет пустой контент для линий */
+    display: block;
+    width: 100%;
+    /* Линия по ширине блока */
+    height: 0.5px;
+    /* Толщина линии */
+    background-color: #00ff00;
+    /* Зеленый цвет линии */
+    position: absolute;
+    left: 0;
+}
+
+.subheader::before {
+    top: 0;
+    /* Линия сверху */
+}
+
+.subheader::after {
+    bottom: 0;
+    /* Линия снизу */
+}
+
+/* Canvas для эффекта Матрицы */
+canvas#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Поместить за контентом */
+    background: #000;
+    /* Черный фон */
+}
+
+/* Контент поверх фона */
+#content {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Контейнер для кролика */
+#rabbit-container {
+    position: absolute;
+    top: 20px;
+    /* Расположение относительно заголовка */
+    right: 20px;
+    width: 100px;
+    /* Ширина контейнера */
+    height: 100px;
+    /* Высота контейнера */
+    overflow: hidden;
+    /* Чтобы кролик не выходил за рамки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    /* Отключить взаимодействие */
+}
+
+/* Анимация для кролика */
+#rabbit {
+    position: relative;
+    width: 100px;
+    /* Размер изображения */
+    height: auto;
+    opacity: 0;
+    /* Скрыто по умолчанию */
+    transform: translateY(50px);
+    /* Начальное положение (снизу) */
+    transition: opacity 1s ease, transform 1s ease;
+    /* Анимация появления */
+}
+
+/* Видимый кролик */
+#rabbit.visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* Поднимается на своё место */
 }

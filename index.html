@@ -20,9 +20,6 @@
                 информатике и
                 ИКТ. Разработчик прикладного программного обеспечения.</p>
         </div>
-        <div id="rabbit-container">
-            <img id="rabbit" src="white-rabbit.png" alt="White Rabbit">
-        </div>
         <nav>
             <ul>
                 <li><a href="#contact">Контакты</a></li>
@@ -64,15 +61,31 @@
     <section id="experience">
         <h2>Профессиональный опыт</h2>
         <article>
-            <h3>Преподаватель программирования</h3>
-            <p><strong>Учебный центр "Программирование для всех"</strong> — Январь 2022 - Настоящее время</p>
             <ul>
-                <li>Проведение занятий по Python и R для начинающих и продвинутых студентов.</li>
-                <li>Разработка учебных материалов и практических заданий.</li>
-                <li>Подготовка студентов к ЕГЭ по информатике с высоким процентом успешной сдачи.</li>
+                <li>
+                    <h4><i class="fas fa-chalkboard-teacher"></i> Преподавание</h4>
+                    <ul>
+                        <li>С 2017 года по настоящее время - Проведение занятий в вузе по дисциплинам: Алгоритмы и структуры данных. Программирование на языках высокого уровня. Парадигмы программирование</li>
+                        <li>С 2022 года по настоящее время - Проведение занятий в качестве самозанятого в рамках программ повышения квалификации для сотрудников фирм и организаций</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4><i class="fas fa-tasks"></i> Организация учебной деятельности</h4>
+                    <ul>
+                        <li>С 2021 года по настоящее время - Заместитель руководителя ЦЦО IT-куб по учебной работе</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4><i class="fas fa-code"></i> Разработка ПО и анализ данных</h4>
+                    <ul>
+                        <li>2019 год - Корректировка электронной модели Территориальной схемы обращения с отходами, в том числе с твердыми коммунальными отходами Республики Хакасия</li>
+                        <li>2021 год - Определение накруток при голосовании по определению имени Международному аэропорту г. Абакан</li>
+                        <li>2022 год - Автоматизированная информационная система "Региональный кадастр отходов Республики Хакасия"</li>
+                        <li>Автор 14 программ и 5 баз данных зарегистрированных через Роспатент</li>
+                    </ul>
+                </li>
             </ul>
         </article>
-        <!-- Добавьте другие места работы аналогичным образом -->
     </section>
 
     <section id="skills">
@@ -95,12 +108,12 @@
                 <img src="data-analysis-logo.png" alt="Анализ данных" title="Анализ данных">
             </div>
             <!-- Машинное обучение -->
-            <div class="skill" onclick="showSkillDescription('ml', this)">
-                <img src="ml-logo.png" alt="Машинное обучение" title="Машинное обучение">
+            <div class="skill" onclick="showSkillDescription('postgresql', this)">
+                <img src="postgresql-logo.png" alt="Postgre SQL" title="Postgre SQL">
             </div>
             <!-- Apache Superset -->
             <div class="skill" onclick="showSkillDescription('superset', this)">
-                <img src="superset-logo.png" alt="Apache Superset" title="Apache Superset">
+                <img src="apachesuperset-logo.png" alt="Apache Superset" title="Apache Superset">
             </div>
         </div>
     </section>
@@ -118,8 +131,31 @@
         <!-- Добавьте информацию об образовании аналогичным образом -->
     </section>
 
+
+    <form action="https://formsubmit.co/artem@golubnichij.ru" method="POST" class="contact-form">
+        <div class="form-group">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Ваш Email</label>
+            <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Сообщение</label>
+            <textarea id="message" name="message" placeholder="Введите текст сообщения" rows="5" required></textarea>
+        </div>
+        <!-- Анти-бот токен -->
+        <input type="hidden" name="_captcha" value="false">
+        <!-- Перенаправление после отправки -->
+        <input type="hidden" name="_next" value="https://ваш-сайт.ru/спасибо.html">
+        <button type="submit" class="submit-button">Отправить</button>
+    </form>
+
+
+
     <footer>
-        <p>&copy; 2024 Артем Голубничий. Все права защищены.</p>
+        <p>&copy; 2025 Артем Голубничий. Все права защищены.</p>
     </footer>
     <script src="script.js"></script>
 </body>
